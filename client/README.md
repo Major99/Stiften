@@ -2,6 +2,27 @@
 
 This is the frontend client for our dapp. It is built with Next.js and uses a render-prop pattern (via `lib/Web3Container.js`) so we can easily inject blockchain functionality (i.e. web3, accounts, and the contract instance) into each page.
 
+
+#Steps to setup locally
+1.clone this repository
+2.run command
+
+  npm install
+
+inside root directory of this cloned repository.
+3.create .env file inside root directory ... and write below code inside .env
+		REACT_APP_API=http://localhost:8000/api
+		REACT_APP_GOOGLE_CLIENT_ID= 
+		REACT_APP_FACEBOOK_APP_ID= 
+4. run command
+
+ npm start
+5. Listen to port 3000
+
+
+
+
+
 ## Pages
 
 There are three pages:
