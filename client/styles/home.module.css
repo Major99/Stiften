@@ -1,0 +1,94 @@
+
+    /* section 1 css  */
+
+
+.section1{
+    background: linear-gradient(to right, #a9dd84  50%, #f6f6e9 50%);
+    position:relative;
+    height: 85vh;
+    display: flex;
+    flex-direction:row;
+    align-items:flex-end;
+}
+.section1content{
+    flex: 0 1 50%;
+    margin-bottom: 5%;
+}
+.contentheader{ 
+    padding: 20px 100px;
+    font-size: 60px;
+}
+.contentpara{
+    font-size: 14px;
+    padding: 0px 100px;
+}
+.buttonMember{
+    text-align: center;
+    cursor: pointer;
+    font-size:27px;
+    font-weight: 300;
+    margin: 40px 0 0 100px;
+    padding:10px 30px;
+    outline: none;
+    background-color: #27ae60;
+    border: none;
+    border-radius:5px;
+    box-shadow: 0 9px #95a5a6;
+}
+.buttonMember:hover{
+  background-color: #2ecc71;
+}
+
+.buttonMember:active {
+  background-color: #2ecc71;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+.pic1{
+    flex: 1 1 auto;
+    background-color: #f6f6e9;
+    width: 50%;
+}
+.pic11{
+    width: 80%;
+}
+
+@media screen  and (max-width:960px) {
+    .pic1{
+        display: none;
+    }
+    
+    .section1{
+        height: auto;
+        align-items: flex-start;
+    }
+    .contentheader{
+        font-size: 50px;
+    }
+    .section1content{
+        flex: 0 1 100%;
+    }
+    .buttonMember{
+        margin: 40px 0 20px 70px;
+        padding:10px 30px;
+        font-size: 20px;
+    }
+}
+
+
+/* Section 2 css */
+
+
+
+.section2{
+    background: #457d58;
+    height: 40vh;
+}
+
+
+/* section3 css */
+
+.section3{
+    background: #f6f6e9;
+    height: 100vh;
+}

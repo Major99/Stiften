@@ -1,52 +1,45 @@
-.outercontainer{
-    /* height: 110px; */
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    padding-left: 3%;
-    padding-top: 20px;
-    padding-right: 3%;
-  
+
+/* background: linear-gradient(90deg, #457d58 0%,#0f5f53 100%); */
+
+.nav{
+  background: linear-gradient(to right, #a9dd84  50%, #f6f6e9 50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navtext{
+  margin-top: 1rem;
+  color: #3A3835;
+  font-size:2.5rem;
+  line-height:2rem;
+  display:inline;
+}
+.navlogo{
+  display:flex;
+  align-items:center;
+}
+.logo{
+  margin: 1rem 1rem 0rem 5rem;
+  width: 4rem;
+}
+@media screen and (max-width:960px){
+  .nav{
+    position: relative;
+    min-height: 55px;
   }
-  .picture{
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
+  .navlogo{
+    position: absolute;
   }
-  .appname{
-    font-size: 30px;
-    font-weight: 600;
-    font-family: none;
-    padding-top: 20px;
-    /* background-color: #dbf3fa; */
+  .logo{
+    width: 2.5rem;
   }
-  @media (min-width:767px) {
-    .appname{
-      font-size: 40px;
-    }
-    .outercontainer{
-      padding-bottom: 20px;
-      padding-left: 9%;
-      padding-top: 20px;
-      padding-right: 9%;
-    }
+  .navtext{
+    font-size: 1.8rem;
   }
-  .menuitem{
-    border: 0px solid black;
-  }
-  
-  .name{
-    /* padding:5px  10px 0px;
-    font-weight: 400;
-    font-size: 15px; */
-  }
-  
-  @media (min-width:767px) {
-    .logo{
-     width: 100px
-    }
-  }
-  @media (max-width:767px) {
-    .logo{
-     width: 80px
-    }
-  }
+}
+
+
+.navlinks:hover{
+}
