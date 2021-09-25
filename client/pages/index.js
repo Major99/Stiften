@@ -56,22 +56,32 @@ const Home = ()=>{
       <section className={styles.section3}>
         <div className={styles.campaignSec}>
           <div className={styles.campaignsecleft}>
-            <h1>Support Your Community</h1>
-            <p>Officia sint adipidsicing officia consectetur aliquip cupidatat amet voluptate irure ullamco velit ut. Exercitation laborum occaecat exercitation sint nulla dolor dolore in nostrud. Aute tempor duis Lorem reprehenderit commodo id nostrud enim ullamco fugiat velit adipisicing quis. Adipisicing esse culpa officia esse nostrud commodo eiusmod ipsum occaecat nulla. Esse quis sunt esse incididunt cupidatat culpa non.</p>
+            <h1 className={styles.campaignheader}>Support Your Community</h1>
+            <p className={styles.campaignpara}>Officia sint adipidsicing officia consectetur aliquip cupidatat amet voluptate irure ullamco velit ut. Exercitation laborum occaecat exercitation sint nulla dolor dolore in nostrud.</p>
             <div className={styles.cards}>
               <Card
                 hoverable
                 style={{ width: 240 }}
-                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                cover={<img alt="example" src="/campaign1.png" />}
+                className={styles.card}
               >
                 <Meta title="Covid-19" />
               </Card>
               <Card
                 hoverable
                 style={{ width: 240 }}
-                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                cover={<img alt="example" src="/campaign2.png" />}
+                className={styles.card}
               >
                 <Meta title="Dog Food" />
+              </Card>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={<img alt="example" src="/campaign4.png" />}
+                className={styles.card}
+              >
+                <Meta title="Water Supply" />
               </Card>
             </div>
           </div>
@@ -79,18 +89,28 @@ const Home = ()=>{
             <Card
               hoverable
               style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              cover={<img alt="example" src="/campaign3.png" />}
+              className={styles.card}
             >
               <Meta title="Food Bank" />
             </Card>
             
-            <Link href='/'><a className={styles.allcamplink}>View All Campaigns</a></Link>
+            <Link href='/'><a className={styles.allcamplink}><u>View All Campaigns</u></a></Link>
           </div>
         </div>
 
         <hr/>
         <div className={styles.about}>
-          <h1>About Us</h1>
+          <div className={styles.aboutpicbg}>
+            <img 
+            src='/about.png'
+            alt='about pic'
+            className={styles.aboutpic}/>
+          </div>
+          <div className={styles.aboutcontent}>
+            <h1 className={styles.aboutheader}>About Us</h1>
+            <p className={styles.aboutpara}>Do adipisicing tempor Lorem ex aliquip veniam cupidatat ut sit. Do mollit occaecat dolore in commodo et id laborum voluptate. Sit ipsum magna commodo nulla consequat ex commodo anim sit irure aliquip. Occaecat Lorem eu fugiat proident nostrud labore. Anim velit sunt cupidatat ut elit sit.</p>
+          </div>
         </div>
 
       <hr/>

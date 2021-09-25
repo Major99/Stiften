@@ -126,17 +126,72 @@
 .campaignsecleft{
     flex: 0 1 70%;
 }
+.campaignheader{
+    margin: 60px 20px 20px 100px;
+    font-size: 60px;
+}
+.campaignpara{
+    margin: 20px 100px;
+}
 .cards{
     display: flex;
     flex-flow: row wrap;
+    margin-left: 100px;
+}
+.card{
+    margin: 30px 40px;
 }
 .campaignsecright{
+    margin: 30px 20px;
     flex: 1 1 auto;
 }
 .allcamplink{
-    
+    margin: 50px 70px;
+    text-decoration:none;
+    color:#3A3835;
+    font-size: 0.8rem;
+}
+.allcamplink:hover{
+    color:#3A3835;
+    font-size: 1.3rem;
+    text-decoration:none;
+    transition: all 0.1s ease-out;
 }
 
+
+.about{
+    display: flex;
+    flex-flow: row ;
+    align-items: center;
+    align-content: center;
+
+}
+.aboutpicbg{
+    flex: 0 1 50%;
+    background: #383838;
+    border-radius: 50%;
+    display:block;
+    margin: 40px 0px 40px 100px;
+}
+.aboutpic{
+    width: 250px;
+    margin: 50px 65px 50px 100px;
+}
+.aboutcontent{
+    flex: 1 1 auto;
+    margin: 50px 50px 90px 50px;
+}
+.aboutheader{
+    margin: 60px 20px 20px 100px;
+    font-size: 60px;
+}
+.aboutpara{
+    margin: 20px 100px;
+}
+
+.teamsec{
+    
+}
 @media screen  and (max-width:960px) {
 
     .campaignSec{   
