@@ -12,7 +12,7 @@
 }
 .section1content{
     flex: 0 1 50%;
-    margin-bottom: 5%;
+    margin-bottom: 9%;
 }
 .contentheader{ 
     padding: 20px 100px;
@@ -81,14 +81,73 @@
 
 
 .section2{
-    background: #457d58;
-    height: 40vh;
+    background: #27ae60;
+    display: flex;
+    flex-flow: row wrap;
 }
+.iconsec{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 60px 80px;
+}
+.icons2{
+    height: 60px;
+}
+.iconContent{
+    padding-left: 30px;
+    align-items: center;
+}
+.section2header{
+    font-size: 30px;
+}
+
+
+@media screen  and (max-width:960px) {
+    .iconsec{
+        margin: 50px 80px;
+    }
+    .section2header{
+        font-size: 20px;
+    }
+}
+
+
 
 
 /* section3 css */
 
 .section3{
     background: #f6f6e9;
-    height: 100vh;
 }
+.campaignSec{
+    display: flex;
+    flex-flow: row ;
+}
+.campaignsecleft{
+    flex: 0 1 70%;
+}
+.cards{
+    display: flex;
+    flex-flow: row wrap;
+}
+.campaignsecright{
+    flex: 1 1 auto;
+}
+.allcamplink{
+    
+}
+
+@media screen  and (max-width:960px) {
+
+    .campaignSec{   
+        flex-flow: row wrap;
+    }
+}
+
+/* section 4 ss */
+
+.section4{
+    background-color: #27ae60;
+    height: 20vh;
+}
+
