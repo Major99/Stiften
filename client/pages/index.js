@@ -35,7 +35,9 @@ const Home = ()=>{
         <div className={styles.section1content}>
           <h1 className={styles.contentheader}>Charity Is An Act Of A Soft Heart.</h1>
           <p className={styles.contentpara}>Cupidatate aute doloree Lorem ex aliqua. Ipsum aute voluptate pariatur laboris sit Lorem commodo adipisicing sunt veniam est. Pariatur labore quis quis aute reprehenderit reprehenderit adipisicing dolore deserunt nulla reprehenderit.</p>
+          <Link href='/auth/signup/signup'>
           <button className={styles.buttonMember}>Become A Member Now <ArrowForwardIcon/></button>
+          </Link>
         </div>
         <div 
           className={styles.pic1}>
@@ -103,7 +105,7 @@ const Home = ()=>{
         <div className={styles.about}>
           <div className={styles.aboutpicbg}>
             <img 
-            src='/about.png'
+            src='/logo_bg3.png'
             alt='about pic'
             className={styles.aboutpic}/>
           </div>

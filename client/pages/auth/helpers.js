@@ -72,3 +72,4 @@ export const updateUser = (response, next) => {
     }
     router.push('/');
 };
+

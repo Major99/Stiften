@@ -54,7 +54,7 @@ const Layout = ({ children, match, history }) => {
 
                 {isAuth() && isAuth().role === 'admin' && (
                     <Fragment>
-                        <Link className={styles.navlinksdetail}  href="/core/admin">
+                        <Link className={styles.navlinksdetail}  href="/user/organisationlist">
                             <a className={styles.navlinksdetail}>
                                 Organizations
                             </a>
@@ -74,7 +74,7 @@ const Layout = ({ children, match, history }) => {
 
                 {isAuth() && isAuth().role === 'subscriber' && (
                     <Fragment>
-                        <Link className={styles.navlinksdetail}  href="/core/private">
+                        <Link className={styles.navlinksdetail}  href="/user/organisationlist">
                             <a className={styles.navlinksdetail}>
                                 Organizations
                             </a>
@@ -84,7 +84,7 @@ const Layout = ({ children, match, history }) => {
                                 Transactions
                             </a>
                         </Link>
-                        <Link className={styles.navlinksdetail}  href="/core/private">
+                        <Link className={styles.navlinksdetail}  href="/accounts">
                             <a className={styles.navlinksdetail}>
                                 Users
                             </a>
@@ -119,6 +119,7 @@ const Layout = ({ children, match, history }) => {
                 {nav()}
             </Header>
             <div className=" ">{children}</div>
+            <Footer></Footer>
         </Fragment>
     );
 };

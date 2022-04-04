@@ -11,10 +11,13 @@ import Link from 'next/link'
 
 import styles from "../../../styles/signin.module.css";
 import router from 'next/router';
+import { useRouter } from 'next/router'
 
 
 
 const Signin = ({ history }) => {
+    const router = useRouter()
+    const { signin } = router.query
 
     const [values, setValues] = useState({
         email: '',
@@ -63,27 +66,27 @@ const Signin = ({ history }) => {
         <form>
 
             <TextField id="Email"
-                       label="Email"
-                       variant="outlined"
-                       onChange={handleChange('email')}
-                       value={email}
-                       fullWidth={true}
-                       className="mb-2 mt-2"
-                       size="small"
-                       />
+                        label="Email"
+                        variant="outlined"
+                        onChange={handleChange('email')}
+                        value={email}
+                        fullWidth={true}
+                        className="mb-4 mt-3"
+                        size="small"
+                        />
 
             <TextField id="Password"
-                       label="Password"
-                       variant="outlined"
-                       onChange={handleChange('password')}
-                       value={password}
-                       type="password"
-                       fullWidth={true}
-                       className="mb-2"
-                       size="small"
-                       />
+                        label="Password"
+                        variant="outlined"
+                        onChange={handleChange('password')}
+                        value={password}
+                        type="password"
+                        fullWidth={true}
+                        className="mb-5"
+                        size="small"
+                        />
 
-                <Button className=" " onClick={clickSubmit} primary type="primary">
+                <Button className={styles.loginaccount} onClick={clickSubmit} primary type="primary">
                     {buttonText}
                 </Button>
         </form>
@@ -93,27 +96,31 @@ const Signin = ({ history }) => {
         <Layout>
           <ToastContainer />
           {isAuth() ? router.push('/') : null}
+            <div className={styles.body}>
+                <div className="container text-center ">
+                <div className='row col justify-content-center'>
+                    <div className='col-md-5 pt-4'>
+                    <div className={styles.card}>
+                        <h1 className={styles.signintitle}>Sign In</h1>
+                        <div className='row col justify-content-center pb-4 pt-4'>
+                            <div className='col-md-6 '>
+                                <Google informParent={informParent} />
+                            </div>
+                            <div className='col-md-6'>
+                                <Facebook informParent={informParent} />
+                            </div>
+                        </div>
 
-            <div className="container text-center mt-5">
-              <div className='row col justify-content-center'>
-                 <div className='col-md-5 card pt-4'>
-                   <h1 className="signin-title">Sign In</h1>
-                    {/*<div className='row col justify-content-center pb-4'>
-                       <div className='col-md-6'>
-                         <Google informParent={informParent} />
-                       </div>
-                       <div className='col-md-6'>
-                         <Facebook informParent={informParent} />
-                       </div>
-                    </div>*/}
-
-                {signinForm()}
-                
-                <Link href="/auth/forgot/forgot" className="forgot ml-2 mb-2">
-                    Forgot Password
-                </Link>
-             </div>
-             </div>
+                        {signinForm()}
+                        
+                        <Link href="/auth/forgot/forgot" className="forgot ml-2 mb-2">
+                            <a className={styles.forgot}>Forgot Password</a>
+                        </Link>
+                        
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </Layout>
     );

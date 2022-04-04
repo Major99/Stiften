@@ -35,8 +35,9 @@ const Google = ({ informParent = f => f }) => {
                         disabled={renderProps.disabled}
                         block
                         type="link"
+                        
                     >
-                    <FaGoogle className='google-logo float-left'/><span className="google-text">Login with Google</span>
+                    <FaGoogle className={styles.googlelogo}/><span className={styles.googletext}>Login with Google</span>
                     </Button>
                 )}
                 cookiePolicy={'single_host_origin'}

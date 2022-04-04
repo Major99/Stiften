@@ -1,19 +1,23 @@
   
-.google-logo{
+.googlelogo{
     font-size: 23px;
     color: red;
+    float: left;
+    margin: 2px;
   }
-  .facebook-logo{
+  .facebooklogo{
     font-size: 25px;
     color: #4267b2;
+    float: left;
+    margin: 2px;
   }
-  .fb-text{
+  .fbtext{
     margin-left:6px;
     font-size: 15px;
     font-weight: lighter;
     color: black;
   }
-  .google-text{
+  .googletext{
     margin-left:10px;
     font-size: 15px;
     font-weight: lighter;

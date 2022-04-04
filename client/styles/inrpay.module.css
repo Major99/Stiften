@@ -1,0 +1,45 @@
+.body{
+    padding-top: 50px;
+    background: linear-gradient(to right, #a9dd84  50%, #f6f6e9 50%);
+}
+
+
+.button {
+    outline: none;
+    border: none;
+    background: #06b909;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 20px;
+}
+.button:hover {
+    background: #03ad06;
+    cursor: pointer;
+}
+
+.heading{
+    font-weight: lighter;
+    color: red;
+    background-color: #fff;
+    text-align: center;
+}
+.formbody{
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 50px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+}
+
+
+@media screen and (max-height:800px) {
+    .body{
+      
+    min-height: 720px;
+    }
+  }

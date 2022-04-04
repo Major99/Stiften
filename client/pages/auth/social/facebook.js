@@ -33,7 +33,7 @@ const Facebook = ({ informParent = f => f }) => {
                      block
                      type="link"
                     >
-                      <FaFacebookSquare className='facebook-logo float-left'/> <span  className="fb-text">Login with Facebook</span>
+                      <FaFacebookSquare className={styles.facebooklogo}/> <span  className={styles.fbtext}>Login with Facebook</span>
                     </Button>
                 )}
             />

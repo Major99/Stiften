@@ -5,6 +5,9 @@ import React, { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
 import Layout from '../../components/layout';
 import axios from 'axios';
+import styles from "../../styles/private.module.css";
+
+
 
 
 import { Button } from 'antd';
@@ -19,17 +22,15 @@ const Private = ({ history }) => {
     });
 
     const token = getCookie('token');
-    const curr_id=isAuth()._id
-    useEffect(() => {
-        console.log(curr_id)
-        loadProfile(curr_id);
-    }, [token,curr_id]);
-    
 
-    const loadProfile = (curr_id) => {
+    useEffect(() => {
+        loadProfile();
+    }, []);
+
+    const loadProfile = () => {
         axios({
             method: 'GET',
-            url: `http://localhost:8000/api/user/${curr_id}`,
+            url: `${process.env.REACT_APP_API}/user/${isAuth()._id}`,
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -43,7 +44,7 @@ const Private = ({ history }) => {
                 console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
                 if (error.response.status === 401) {
                     signout(() => {
-                        router.push('/');
+                        history.push('/');
                     });
                 }
             });
@@ -61,7 +62,7 @@ const Private = ({ history }) => {
         setValues({ ...values, buttonText: 'Submitting' });
         axios({
             method: 'PUT',
-            url: `http://localhost:8000/api/user/update`,
+            url: `${process.env.REACT_APP_API}/user/update`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -126,7 +127,7 @@ const Private = ({ history }) => {
                 />
 
 
-                <Button className="mb-3" onClick={clickSubmit} primary type="primary">
+                <Button className={styles.loginaccount} onClick={clickSubmit} primary type="primary">
                     {buttonText}
                 </Button>
 
@@ -136,14 +137,18 @@ const Private = ({ history }) => {
     return (
         <Layout>
           <ToastContainer />
-          <div className="container text-center mt-5">
+            <div className={styles.body}>
+          <div className="container text-center ">
             <div className='row col justify-content-center'>
-               <div className='col-md-5 card pt-4'>
-                <h1 className=" ">Private</h1>
+               <div className='col-md-5  pt-4'>
+                    <div className={styles.card}>
+                <h1 className=" ">Profile</h1>
                 <p className=" ">Profile update</p>
                 {updateForm()}
             </div>
+            </div>
           </div>
+        </div>
         </div>
         </Layout>
     );

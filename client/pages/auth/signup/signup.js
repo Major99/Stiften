@@ -47,62 +47,67 @@ const Signup = () => {
     const signupForm = () => (
         <form>
 
-            <TextField id="Name"
-                       label="Enter name"
-                       variant="outlined"
-                       onChange={handleChange('name')}
-                       value={name}
-                       fullWidth={true}
-                       className="mb-2 mt-2"
-                       size="small"
-                       />
+            <TextField  id="Name"
+                        label="Enter name"
+                        variant="outlined"
+                        onChange={handleChange('name')}
+                        value={name}
+                        fullWidth={true}
+                        className="mb-4 mt-3"
+                        size="small"
+                        />
 
 
-           <TextField id="Email"
-                      label="Enter email"
-                      variant="outlined"
-                      onChange={handleChange('email')}
-                      value={email}
-                      fullWidth={true}
-                      className="mb-2 mt-1"
-                      size="small"
-                      />
+            <TextField  id="Email"
+                        label="Enter email"
+                        variant="outlined"
+                        onChange={handleChange('email')}
+                        value={email}
+                        fullWidth={true}
+                        className="mb-4 "
+                        size="small"
+                        />
 
 
 
-          <TextField id="Password"
-                     label="Enter password"
-                     variant="outlined"
-                     onChange={handleChange('password')}
-                     value={password}
-                     type="password"
-                     fullWidth={true}
-                     className="mb-2 mt-1"
-                     size="small"
-                     />
+            <TextField id="Password"
+                        label="Enter password"
+                        variant="outlined"
+                        onChange={handleChange('password')}
+                        value={password}
+                        type="password"
+                        fullWidth={true}
+                        className="mb-3"
+                        size="small"
+                        />
 
-                 <Button className=" " onClick={clickSubmit} primary type="primary">
-                     {buttonText}
-                 </Button>
+            <Button className={styles.loginaccount} onClick={clickSubmit} primary type="primary">
+                {buttonText}
+            </Button>
         </form>
     );
 
     return (
         <Layout>
-          <ToastContainer />
-          {isAuth() ? <Redirect to="/" /> : null}
+            <ToastContainer />
+            {isAuth() ? <Redirect to="/" /> : null}
+            
+            <div className={styles.body}>
+                <div className="container text-center">
+                    <div className='row col justify-content-center'>
+                    <div className='col-md-5 pt-4'>
+                    <div className={styles.card}>
+                        <h1 className={styles.getstartedtitle}>Create an account</h1>
+                            {signupForm()}
+                            <Link href="/auth/password/forgot" className="forgot ml-2 mb-2">
+                                <a className={styles.forgot}>Already a member ?</a>
+                            </Link>
+                    </div>
+                    </div>
+                </div>
+                </div>
 
-          <div className="container text-center mt-5">
-            <div className='row col justify-content-center'>
-               <div className='col-md-5 card pt-4'>
-               <h1 className="get-started-title">Create an account</h1>
-                {signupForm()}
-                <Link href="/auth/password/forgot" className="forgot ml-2 mb-2">
-                    Forgot Password
-                </Link>
             </div>
-          </div>
-        </div>
         </Layout>
     );
 };

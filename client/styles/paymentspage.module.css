@@ -1,0 +1,30 @@
+
+.body{
+    padding-top: 50px;
+    background: linear-gradient(to right, #a9dd84  50%, #f6f6e9 50%);
+}
+.heading{
+    font-weight: lighter;
+    color: red;
+}
+
+.button {
+    outline: none;
+    border: none;
+    background: #06b909;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    width: 75%;
+    margin: 5px;
+}
+.button:hover {
+    background: #03ad06;
+    cursor: pointer;
+}
+@media screen and (max-height:800px) {
+    .body{
+      
+    min-height: 720px;
+    }
+  }

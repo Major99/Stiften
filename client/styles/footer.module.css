@@ -1,43 +1,67 @@
+
+/*FOOTER*/
 .footer{
-    padding-top: 30px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.9)
-  }
-  .field{
-    margin: 5px;
-    font-size: 17px;
-     color: white;
-    font-weight: 300;
+  background-color:#253248;
+  width:100%;
+  display:flex;
+  align-items:top;
+  padding:5rem 0;
   }
   
-  @media (min-width:767px) {
-    .field{
-      margin: 10px;
-    }
-    .footer{
-      padding-left: 80px;
-      padding-right: 80px;
-    }
+  .footer section{
+  padding:1rem 2rem;
+  width:100%;
+  color: #fff;
+  vertical-align:top;
   }
-  @media (max-width:767px) {
-    .field{
-      font-size: 15px;
-    }
-    .footer{
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-    .footerhome{
-      height: 155px;
-    }
+  
+  .footer section h3{
+  color:#fff;
   }
-  .footermain{
-    background-color: #dbf3fa;
-    padding-top: 480px;
+  .footer section p{
+  color:#fff;
   }
-  .footerhome{
-     /* margin-top: 50vh; */
-     padding-top: 30px;
-     height: 100px;
-     background-color: rgba(0, 0, 0, 0.9)
+  
+  .footer section a{
+  color:grey;
+  display:flex;
+  align-items:center;
+  white-space:nowrap;
+  margin:15px 0;
   }
+  
+  .footer section a:hover{
+  color:#fff;
+  }
+  
+  .footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before{
+  content:"";
+  font-family:"FontAwesome";
+  margin-right:5px;
+  color:#fff;
+  }
+  
+  .footer section a span{
+  margin:0 10px;
+  }
+  
+  .subfooter{
+  background-color:#142136;
+  text-align:Center;
+  color:white;
+  padding:1rem 0;
+  }
+  
+  @media (max-width:1020px){
+  .footer{
+  display:block;
+  }
+  .footer section{
+  padding:1rem 1rem;
+  }
+  .footer section:nth-child(2), .footer section:nth-child(3){
+  width:49%;
+  display:inline-block;
+  }
+  }
+  
