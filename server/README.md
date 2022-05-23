@@ -9,12 +9,12 @@ inside root directory of this cloned repository
 NODE_ENV=development
 PORT=8000
 CLIENT_URL=http://localhost:3000
-DATABASE=mongodb://127.0.0.1:27017/Ecommerce
+DATABASE=mongodb://127.0.0.1:27017/Stiften
 SENDGRID_API_KEY=
 JWT_SECRET=26782938746T7WUHSXBVH
 JWT_ACCOUNT_ACTIVATION=8743409876545GNVBMNBK
-EMAIL_TO=mailmeaktiwari@gmail.com
-EMAIL_FROM=noreply@amantiwari.me
+EMAIL_TO=
+EMAIL_FROM=
 JWT_RESET_PASSWORD=556778089865GVBNKJHGVGHBJ
 4. run command
 
