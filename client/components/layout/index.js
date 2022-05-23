@@ -64,7 +64,7 @@ const Layout = ({ children, match, history }) => {
                                 Transactions
                             </a>
                         </Link>
-                        <Link className={styles.navlinksdetail}  href="/accounts">
+                        <Link className={styles.navlinksdetail}  href="/admin/totalUser/totalUsers">
                             <a className={styles.navlinksdetail}>
                                 Users
                             </a>

@@ -1,7 +1,14 @@
-const User = require('../models/user');
+const Organisation = require('../models/organisation');
+
+
+
+exports.create = (req, res) => {
+
+};
+
 
 exports.read = (req, res) => {
-    const userId = req.params.id;
+    const orgId = req.params.id;
     console.log(userId);
     User.findById(userId).exec((err, user) => {
         if (err || !user) {
@@ -10,8 +17,6 @@ exports.read = (req, res) => {
             });
         }
         console.log(user)
-        user.hashed_password = undefined;
-        user.salt = undefined;
         res.json(user);
     });
 };

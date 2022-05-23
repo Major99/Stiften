@@ -11,6 +11,7 @@ const Razorpay = require('razorpay')
 const authRoute = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const payments = require('./routes/payments');
+const organisation = require('./routes/organisation');
 
 //app middlewares
 app.use(cors());
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true}))
 app.use('/api', authRoute);
 app.use('/api', userRoutes);
 app.use('/api', payments);
+app.use('/api', organisation);
 
 
 mongoose.connect(process.env.DATABASE, {  useNewUrlParser: true, useUnifiedTopology: true })

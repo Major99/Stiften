@@ -145,6 +145,12 @@ const Private = ({ history }) => {
                 <h1 className=" ">Profile</h1>
                 <p className=" ">Profile update</p>
                 {updateForm()}
+                
+                <Link className={styles.navlinksdetail}  href="/accounts">
+                            <a className={styles.navlinksdetail}>
+                                For BlockChain Details
+                            </a>
+                </Link>
             </div>
             </div>
           </div>
