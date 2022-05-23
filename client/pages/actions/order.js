@@ -19,7 +19,7 @@ export const createOrder = async (product,token) => {
 
 //ORDER VERIFICATION
 export const orderVerify = (fuck,token) => {
-    return fetch('http://localhost:8080/order/verify', {
+    return fetch('http://localhost:8000/api/order/verify', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -29,6 +29,8 @@ export const orderVerify = (fuck,token) => {
         body: JSON.stringify(fuck)
     })
         .then(response => {
+            console.log('order verify succesfull')
+            console.log(response)
             return response.json();
         })
         .catch(err => console.log(err));

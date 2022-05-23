@@ -99,7 +99,7 @@ const Signup = () => {
                     <div className={styles.card}>
                         <h1 className={styles.getstartedtitle}>Create an account</h1>
                             {signupForm()}
-                            <Link href="/auth/password/forgot" className="forgot ml-2 mb-2">
+                            <Link href="/auth/signin/signin.js" className="forgot ml-2 mb-2">
                                 <a className={styles.forgot}>Already a member ?</a>
                             </Link>
                     </div>

@@ -59,9 +59,14 @@ const Layout = ({ children, match, history }) => {
                                 Organizations
                             </a>
                         </Link>
-                        <Link className={styles.navlinksdetail}  href="/core/admin">
+                        <Link className={styles.navlinksdetail}  href="/admin/totalTransaction/totalTransactions">
                             <a className={styles.navlinksdetail}>
                                 Transactions
+                            </a>
+                        </Link>
+                        <Link className={styles.navlinksdetail}  href="/accounts">
+                            <a className={styles.navlinksdetail}>
+                                Users
                             </a>
                         </Link>
                         <Link className={styles.navlinksdetail}  href="/core/admin">
@@ -79,14 +84,14 @@ const Layout = ({ children, match, history }) => {
                                 Organizations
                             </a>
                         </Link>
-                        <Link className={styles.navlinksdetail}  href="/core/private">
+                        <Link className={styles.navlinksdetail}  href="/user/transaction/transactions">
                             <a className={styles.navlinksdetail}>
                                 Transactions
                             </a>
                         </Link>
                         <Link className={styles.navlinksdetail}  href="/accounts">
                             <a className={styles.navlinksdetail}>
-                                Users
+                                Detials
                             </a>
                         </Link>
                         <Link className={styles.navlinksdetail}  href="/core/private">
@@ -96,6 +101,31 @@ const Layout = ({ children, match, history }) => {
                         </Link>
                     </Fragment>
                 )}
+
+                {isAuth() && isAuth().role === 'organisation' && (
+                                    <Fragment>
+                                        <Link className={styles.navlinksdetail}  href="/user/organisationlist">
+                                            <a className={styles.navlinksdetail}>
+                                                Volunteer
+                                            </a>
+                                        </Link>
+                                        <Link className={styles.navlinksdetail}  href="/user/transaction/transactions">
+                                            <a className={styles.navlinksdetail}>
+                                                Transactions
+                                            </a>
+                                        </Link>
+                                        <Link className={styles.navlinksdetail}  href="/core/private">
+                                            <a className={styles.navlinksdetail}>
+                                                Transactions
+                                            </a>
+                                        </Link>
+                                        <Link className={styles.navlinksdetail}  href="/core/private">
+                                            <a className={styles.navlinksdetail}>
+                                                {isAuth().name}
+                                            </a>
+                                        </Link>
+                                    </Fragment>
+                                )}
 
                 {isAuth() && (
 

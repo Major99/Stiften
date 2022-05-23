@@ -4,8 +4,8 @@ const { v4: uuidv4 } = require('uuid');
 const crypto = require('crypto');
 
 const instance = new Razorpay({
-	key_id: 'rzp_test_Zd5zdtFpzQk07Q',
-	key_secret: 'gw5a0hiNF6SBcSm0J5nNzzxq'
+	key_id: 'rzp_test_PnqF9iLcofwZZo',
+	key_secret: 'k1d6mFsnOzMf9UCuMsXwD7n4'
 });
 
 //CREATE ORDER
@@ -60,8 +60,8 @@ exports.createOrder =  async (req, res) => {
 // VERIFICATION
  module.exports.paymentVerification =  async (req,res) => {
 	// do a validation
-	const secret = '12345678'
-
+	const secret = 'k1d6mFsnOzMf9UCuMsXwD7n4'
+    console.log(secret)
 	console.log(req.body)
 
 	const crypto = require('crypto')
@@ -78,7 +78,39 @@ exports.createOrder =  async (req, res) => {
 		require('fs').writeFileSync('payment1.json', JSON.stringify(req.body, null, 4))
 	} else {
 		// pass it
+        console.log('request is wrong')
+		require('fs').writeFileSync('payment1.json', JSON.stringify(req.body, null, 4))
+        // res.status(400).send('Invalid signature');
 	}
 	res.json({ status: 'ok' })
 }
 
+//READ ORDER
+exports.read = (req, res) => {
+    const userId = req.params.id;
+    console.log(userId);
+    Order.find({userId:userId}).exec((err, orderr) => {
+        if (err || !orderr) {
+            return res.status(400).json({
+                error: 'Order not found'
+            });
+        }
+        console.log(orderr)
+        res.json(orderr);
+    });
+};
+
+//READ ORDER
+exports.readAll = (req, res) => {
+    const userId = req.params.id;
+    console.log(userId);
+    Order.find({}).exec((err, orderr) => {
+        if (err || !orderr) {
+            return res.status(400).json({
+                error: 'Order not found'
+            });
+        }
+        console.log(orderr)
+        res.json(orderr);
+    });
+};

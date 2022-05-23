@@ -30,7 +30,7 @@ const Private = ({ history }) => {
     const loadProfile = () => {
         axios({
             method: 'GET',
-            url: `${process.env.REACT_APP_API}/user/${isAuth()._id}`,
+            url: `https:///user/${isAuth()._id}`,
             headers: {
                 Authorization: `Bearer ${token}`
             }

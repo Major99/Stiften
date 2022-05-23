@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import { useCallback } from "react";
+import { useCallback,useEffect } from "react";
 import { createOrder, orderVerify } from '../../actions/order';
 import { isAuth,getCookie } from '../../actions/auth';
 import { useRouter } from 'next/router';
+import Router from 'next/router'; 
 import Layout from '../../../components/layout';
 import styles from '../../../styles/inrpay.module.css';
 import { TextField } from '@material-ui/core';
 import { Button } from 'antd';
+
 
 function loadScript(src) {
 	return new Promise((resolve) => {
@@ -28,18 +30,18 @@ const inr = ()=>{
     const { inrpay } = router.query
 
 	const [name, setName] = useState('Aman');
-	const [amountC, setAmountC] = useState(1234)
     const token = getCookie('token');
     const [orderID, setOrderID]= useState();
     const [payStatus, setPayStatus]=useState();
 
     
     const [values, setValues] = useState({
-        amount: '',
-        buttonText: 'Pay in INR'
+        amount: 0,
+        buttonText: 'Pay in INR',
+        orderConfirm: false
     });
 
-    const { amount, buttonText } = values;
+    const { amount, buttonText,orderConfirm } = values;
 
     const handleChange = name => event => {
         // console.log(event.target.value);
@@ -58,9 +60,9 @@ const inr = ()=>{
 
     const generateOrder = event => {
         const order = {
-                    orgId: 'Org1',
-                    order_amount: amountC,
-                    userId: name }
+                    orgId: inrpay,
+                    order_amount: amount,
+                    userId: isAuth()._id }
        
         event.preventDefault();
         setValues({ ...values, buttonText: 'Submitting' });
@@ -69,6 +71,8 @@ const inr = ()=>{
                 console.log(res)
                 setOrderID(res.order_id)
                 setPayStatus(true)
+                paymentHandler()
+                setPayStatus(false)
             })
             .catch(err => console.log(err))
         }
@@ -83,37 +87,45 @@ const inr = ()=>{
 			return
 		}
         const options = {
-        key: 'rzp_test_Zd5zdtFpzQk07Q',
-        amount: amountC,
+        key: 'rzp_test_PnqF9iLcofwZZo',
+        amount: amount,
         currency: 'INR',
         name: 'Payments',
         order_id: orderID,
    
         handler(response) {
-          const fuck = {
-            order_id:response.razorpay_order_id,
-            payment_id:response.razorpay_payment_id,
-            razorpay_signature:response.razorpay_signature,
-            userId: name
-          }
-         orderVerify(fuck,token)
-           .then((res) =>  onOrderverification(res))
-           .catch(err => console.log(err))
-          }
+            const fuck = {
+                order_id:response.razorpay_order_id,
+                payment_id:response.razorpay_payment_id,
+                razorpay_signature:response.razorpay_signature,
+                userId: name
+            }
+            orderVerify(fuck,token)
+                .then((res) =>  onOrderverification(res))
+                .catch(err => console.log(err))
+            }
         }
         const razorpay = new window.Razorpay(options);
         razorpay.open()
     }
     
     const onOrderverification = (res) => {
-    if(res.payment ===0){
-        return;
+        if(res.status ==='ok'){
+            console.log('All set')
+            setValues({ ...values, orderConfirm: true });
+            console.log(orderConfirm)
+        }
+
+        else{
+            console.log('not verifies')
+            return;
+        }
     }
-    if(res.payment ===1){
-        console.log('All set')
-    }
-    return;
-    }
+    useEffect(() => {
+        if(orderConfirm === true ){
+            Router.push('/user/payments/confirmpay')
+        }
+      });
     
     if(payStatus){
         paymentHandler()
@@ -159,7 +171,6 @@ const inr = ()=>{
     
     const paymentForm = () => (
         <form>
-
             <TextField id="Amount to donate"
                         label="Amount to donate"
                         variant="outlined"
