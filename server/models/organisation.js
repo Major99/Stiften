@@ -15,7 +15,7 @@ const organisationSchema = mongoose.Schema({
         type:Number
     },
     location:{
-        type:Array
+        type:String
     },
     description:{
         type:String

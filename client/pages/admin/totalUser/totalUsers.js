@@ -64,12 +64,12 @@ const totalUsers = ()=>{
             }
         })
             .then(response => {
-                console.log('PRIVATE PROFILE UPDATE', response);
+                console.log('USERS LIST UPDATE', response);
                 console.log(response.data);
                 setValues({data:response.data})
             })
             .catch(error => {
-                console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
+                console.log('USERS LIST UPDATE ERROR', error.response.data.error);
             });
     };
 
@@ -77,7 +77,7 @@ const totalUsers = ()=>{
 
     return(
         <Layout>
-            <h1>Transactions List</h1>
+            <h1>Users List</h1>
             <Table columns={columns} dataSource={data} />
         </Layout>
     )

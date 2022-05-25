@@ -54,7 +54,7 @@ const Layout = ({ children, match, history }) => {
 
                 {isAuth() && isAuth().role === 'admin' && (
                     <Fragment>
-                        <Link className={styles.navlinksdetail}  href="/user/organisationlist">
+                        <Link className={styles.navlinksdetail}  href="/admin/organisation/organisations">
                             <a className={styles.navlinksdetail}>
                                 Organizations
                             </a>

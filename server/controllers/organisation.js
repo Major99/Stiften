@@ -1,38 +1,24 @@
-const Organisation = require('../models/organisation');
+const Organisations = require('../models/organisation');
 
 
-
-exports.create = (req, res) => {
-
-};
 
 
 exports.read = (req, res) => {
     const orgId = req.params.id;
-    console.log(userId);
-    User.findById(userId).exec((err, user) => {
-        if (err || !user) {
-            return res.status(400).json({
-                error: 'User not found'
-            });
-        }
-        console.log(user)
-        res.json(user);
-    });
+    console.log(orgId);
 };
 
 //READ ORDER
 exports.readAll = (req, res) => {
-    const userId = req.params.id;
-    console.log(userId);
-    User.find({role:'subscriber'}).exec((err, user) => {
-        if (err || !user) {
+    
+    Organisations.find().exec((err, org) => {
+        if (err || !org) {
             return res.status(400).json({
-                error: 'Users not found'
+                error: 'Organisations not found'
             });
         }
-        console.log(user)
-        res.json(user);
+        console.log(org)
+        res.json(org);
     });
 };
 
@@ -40,40 +26,31 @@ exports.update = (req, res) => {
     // console.log('UPDATE USER - req.user', req.user, 'UPDATE DATA', req.body);
     const { name, password } = req.body;
 
-    User.findOne({ _id: req.user._id }, (err, user) => {
-        if (err || !user) {
-            return res.status(400).json({
-                error: 'User not found'
-            });
-        }
-        if (!name) {
-            return res.status(400).json({
-                error: 'Name is required'
-            });
-        } else {
-            user.name = name;
-        }
+};
 
-        if (password) {
-            if (password.length < 6) {
-                return res.status(400).json({
-                    error: 'Password should be min 6 characters long'
-                });
-            } else {
-                user.password = password;
-            }
-        }
 
-        user.save((err, updatedUser) => {
-            if (err) {
-                console.log('USER UPDATE ERROR', err);
+
+exports.create = (req, res) => {
+    const {e}=req.body
+    console.log(e)
+    if(e){
+        const {name,rating,number,location,description,social,gmap,website,email,address}=e
+        const newOrg= new Organisations({name,rating,number,location,description,social,gmap,website,email,address});
+        newOrg.save((err,success)=>{
+            if(err){
+                console.log(`Error in saving organisation in database: ${err}`)
                 return res.status(400).json({
-                    error: 'User update failed'
+                error: err
                 });
             }
-            updatedUser.hashed_password = undefined;
-            updatedUser.salt = undefined;
-            res.json(updatedUser);
-        });
-    });
+            res.json({
+                message: "New organisation added successfully !"
+            })
+        })
+    }
+    else{
+        return res.json({
+        message: 'something went wrong'
+        })
+    }
 };
